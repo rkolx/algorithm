@@ -29,5 +29,15 @@ public class B1076 {
 
         System.out.println(result);
 
+               /* 풀이2
+        String[] color = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+        long ch1 = Arrays.asList(color).indexOf(sc.next())*10;
+        long ch2 = Arrays.asList(color).indexOf(sc.next());
+        long ch3 = (long) Math.pow(10,Arrays.asList(color).indexOf(sc.next()));
+        long result = (ch1+ch2)*ch3;
+        System.out.println(result);
+        */
+
+
     }
 }
