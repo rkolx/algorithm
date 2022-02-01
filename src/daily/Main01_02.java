@@ -18,6 +18,12 @@ public class Main01_02 {
             }
         }
 
+
+/*        for (char x:s.toCharArray()) {
+            if (Character.isLowerCase(x)) answer += Character.toUpperCase(x);
+            else answer += Character.toLowerCase(x);
+        }*/
+        
         return answer.toString();
     }
 
