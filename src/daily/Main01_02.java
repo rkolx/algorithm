@@ -6,19 +6,19 @@ public class Main01_02 {
 
     public String Solution(String s){
 
-        String answer="";
+        StringBuilder answer= new StringBuilder();
         char c;
 
         for (int i = 0; i < s.length(); i++) {
             c = s.charAt(i);
             if (Character.isUpperCase(c)){
-                answer += String.valueOf(c).toLowerCase();
+                answer.append(Character.toLowerCase(c));
             }else if (Character.isLowerCase(c)){
-                answer += String.valueOf(c).toUpperCase();
+                answer.append(Character.toUpperCase(c));
             }
         }
 
-        return answer;
+        return answer.toString();
     }
 
 
