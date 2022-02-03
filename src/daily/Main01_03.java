@@ -6,16 +6,29 @@ public class Main01_03 {
 
     public String Solution(String s){
 
-        String answer="";
+        String[] str = s.split(" ");
 
-        return answer;
+        int maxLen = str[0].length();
+        int maxIndex = 0;
+
+        //최대길이가 여러개라면..?
+        for (int i = 0; i <str.length ; i++) {
+            if (str[i].length() > maxLen){
+                maxLen = str[i].length();
+                maxIndex = i;
+            }
+        }
+
+        return str[maxIndex];
     }
 
     public static void main(String[] args){
 
-        Scanner in=new Scanner(System.in);
-        int input = in.nextInt();
-        System.out.println(input);
+        Main01_03 m = new Main01_03();
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        System.out.println(m.Solution(input));
 
     }
 }
