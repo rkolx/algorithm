@@ -15,6 +15,16 @@ public class Main01_07 {
         return answer;
     }
 
+    //스트링빌더 이용
+    public String Solution2(String s){
+        String answer = "NO";
+        String tmp = new StringBuilder(s).reverse().toString();
+        if (s.equals(tmp)){
+            return  "YES";
+        }
+        return answer;
+    }
+
 
     public static void main(String[] args){
         Main01_07 m = new Main01_07();
