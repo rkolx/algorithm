@@ -27,6 +27,17 @@ public class Main01_08 {
         return answer;
     }
 
+    //정규표현식 이용
+    public String Solution2(String s){
+        String answer = "NO";
+        s = s.toLowerCase().replaceAll("^[A-Z]","");
+        String tmp = new StringBuilder(s).reverse().toString();
+        if (s.equals(tmp)){
+            return "YES";
+        }
+        return answer;
+
+    }
 
     public static void main(String[] args){
         Main01_08 m = new Main01_08();
