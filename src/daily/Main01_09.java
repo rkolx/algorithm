@@ -14,7 +14,27 @@ public class Main01_09 {
                 answer += ch[i];
             }
         }
+
+/*        for (char x : s.toCharArray()) {
+            if (Character.isDigit(x)){
+                answer += x;
+            }
+        }*/
+
         return Integer.parseInt(answer);
+    }
+
+    //아스키코드 이용
+    public int Solution2(String s){
+
+        int answer = 0;
+
+        for (char x : s.toCharArray()) {
+            if (x >= 49 && x <= 57){
+                answer += answer*10+(x-48);
+            }
+        }
+        return answer;
     }
 
     public static void main(String[] args) {
