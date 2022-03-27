@@ -10,9 +10,11 @@ public class Main02_01 {
         for (int i = 0; i < nums.length - 1; i++) {
             if (i==0){
                 answer += nums[0];
+                System.out.print(nums[0]);
             }
             if (nums[i] < nums[i+1]){
                 answer += nums[i+1];
+                System.out.print(" "+nums[i+1]);
             }
         }
         return Integer.parseInt(answer);
@@ -39,9 +41,11 @@ public class Main02_01 {
             numList[i] = in.nextInt();
         }
 
-        for (int x:m.Solution2(n,numList)) {
+/*        for (int x:m.Solution2(n,numList)) {
             System.out.print(x+" ");
-        }
+        }*/
+
+        m.Solution(n,numList);
     }
 
 
