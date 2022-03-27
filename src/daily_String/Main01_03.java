@@ -1,4 +1,4 @@
-package daily;
+package daily_String;
 import java.util.Scanner;
 
 public class Main01_03 {

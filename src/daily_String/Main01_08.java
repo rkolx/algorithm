@@ -1,6 +1,5 @@
-package daily;
+package daily_String;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main01_08 {
