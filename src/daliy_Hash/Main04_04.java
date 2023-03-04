@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main04_04 {
 
@@ -13,32 +14,38 @@ public class Main04_04 {
 
         String S = br.readLine();
         String T = br.readLine();
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < T.length(); i++) {
+            map.put(T.charAt(i), map.getOrDefault(T.charAt(i), 0) + 1);
+        }
 
-        System.out.println(m.Solution(S, T));
+        System.out.println(m.Solution(S, T, map));
     }
 
 
-    public int Solution(String s, String t) {
+    public int Solution(String s, String t, Map<Character, Integer> map) {
         int answer = 0;
-        char[] arr1 = s.toCharArray();
-        char[] arr2 = t.toCharArray();
+        int count = 0;
 
-        HashMap<Character, Integer> s2 = new HashMap<>();
-        for (int i = 0; i < t.length(); i++) {
-            s2.put(arr2[i], s2.getOrDefault(arr2[i], 0) + 1);
-        }
+        HashMap<Character, Integer> m = new HashMap<>();
 
-        HashMap<Character, Integer> s1 = new HashMap<>();
-        for (int i = 0; i < t.length(); i++) {
-            s1.put(arr1[i], s1.getOrDefault(arr1[i], 0) + 1);
-        }
-        if(s1.equals(s2)) answer++;
+        for (int i = 0; i <= s.length() - t.length(); i++) {
+            String substring = s.substring(i, i + t.length());
 
-        for (int i = 0, j = t.length(); j < s.length(); i++, j++) {
-            s1.put(arr1[j], s1.getOrDefault(arr1[j], 0) + 1);
-            s1.put(arr1[i], s1.get(arr1[i]) - 1);
-            if (s1.get(arr1[i]) == 0) s1.remove(arr1[i]);
-            if(s1.equals(s2)) answer++;
+            for (int j = 0; j < substring.length(); j++) {
+                m.put(substring.charAt(j), m.getOrDefault(substring.charAt(j), 0) + 1);
+            }
+
+            for (Character c : m.keySet()) {
+                 if (map.containsKey(c) && map.get(c).equals(m.get(c))) {
+                     count++;
+                 }
+            }
+            if (count == map.size()) {
+                answer++;
+            }
+            count = 0;
+            m = new HashMap<>();
         }
         return answer;
     }
