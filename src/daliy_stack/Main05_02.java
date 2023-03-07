@@ -13,6 +13,7 @@ public class Main05_02 {
 
         String s = br.readLine();
         System.out.println(m.Solution(s));
+//        System.out.println(m.Solution2(s));
     }
 
     public String Solution(String s) {
@@ -26,7 +27,24 @@ public class Main05_02 {
                 stack.push(s.charAt(i));
             }
         }
-        System.out.println(stack);
+        return answer;
+    }
+
+    public String Solution2(String s) {
+        String answer = "";
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                stack.pop();
+            }
+
+            if (stack.isEmpty() && c != ')') {
+                answer += c;
+            }
+        }
         return answer;
     }
 }
