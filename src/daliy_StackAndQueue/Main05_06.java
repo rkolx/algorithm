@@ -1,4 +1,4 @@
-package daliy_stack;
+package daliy_StackAndQueue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
