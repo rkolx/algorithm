@@ -19,7 +19,7 @@ public class Main03 {
         if (n == 1) {
             return 1;
         } else {
-           return n * DFS(n -1);
+            return n * DFS(n - 1);
         }
     }
 
